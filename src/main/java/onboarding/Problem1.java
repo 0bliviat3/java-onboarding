@@ -24,7 +24,7 @@ class Problem1 {
         return 2;
     }
 
-    private int[] getMax(int left, int right) {
+    public int[] getMax(int left, int right) {
         if(right - left != 1) { return null; }
         int[] arr = {0, 1, 0, 1}; // left sum, mul , right sum, mul
         for(int i = 100; i >= 1; i/=10){
