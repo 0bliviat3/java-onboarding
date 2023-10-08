@@ -9,11 +9,19 @@ class Problem1 {
      */
 
     public static int solution(List<Integer> pobi, List<Integer> crong) {
-        int answer = Integer.MAX_VALUE;
-
-
-
-        return answer;
+        Problem1 p = new Problem1();
+        int[] left = p.getMax(pobi.get(0),pobi.get(1));
+        int[] right = p.getMax(crong.get(0),crong.get(1));
+        if(left == null || right == null) { return -1; }
+        int leftMax = 0;
+        int rightMax = 0;
+        for(int i = 0; i < 4; i++) {
+            leftMax = Math.max(leftMax, left[i]);
+            rightMax = Math.max(rightMax, right[i]);
+        }
+        if(leftMax == rightMax) { return 0; }
+        else if(leftMax > rightMax) { return 1; }
+        return 2;
     }
 
     private int[] getMax(int left, int right) {
